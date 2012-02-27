@@ -228,7 +228,14 @@ public abstract class ActionBarItem {
          * 
          * @see R.drawable#gd_action_bar_mail
          */
-        Mail
+        Mail,
+        
+        /**
+         * Logout
+         * 
+         * @see R.drawable#gd_action_bar_logout
+         */
+        Logout
     }
 
     protected Drawable mDrawable;
@@ -457,6 +464,10 @@ public abstract class ActionBarItem {
                 drawableId = R.drawable.gd_action_bar_mail;
                 descriptionId = R.string.gd_mail;
                 break;
+            case Logout:
+            	drawableId = R.drawable.gd_action_bar_logout;
+            	descriptionId = R.string.gd_mail;
+            	break;
 
             default:
                 // Do nothing but return null
