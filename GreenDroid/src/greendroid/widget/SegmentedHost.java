@@ -44,7 +44,7 @@ public class SegmentedHost extends LinearLayout {
     private int mSegmentedHostId;
     private FrameLayout mContentView;
     private int mSelectedSegment;
-
+    private int index;
     private SegmentedAdapter mAdapter;
     private View[] mViews;
     private DataSetObserver mSegmentObserver = new DataSetObserver() {
@@ -58,6 +58,12 @@ public class SegmentedHost extends LinearLayout {
         }
     };
 
+    public void setIndex(int index){
+    	this.index = index;
+    }
+    public int getIndex(){
+    	return this.index;
+    }
     public SegmentedHost(Context context) {
         this(context, null);
     }
@@ -170,6 +176,7 @@ public class SegmentedHost extends LinearLayout {
     }
 
     private void setContentView(int index) {
+    	this.index = index;
         mSelectedSegment = index;
         mContentView.removeAllViews();
         if (mViews[index] == null) {
